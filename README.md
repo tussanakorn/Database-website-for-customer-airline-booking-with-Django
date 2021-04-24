@@ -1,6 +1,7 @@
 # Flight databases with Django
 
 CPE231 Database Systems, October-November 2020
+- This project is made for educational purposes only. It is not intended to copy the website airasia in any way.
 
 Topic : Air Travel Agency
 A Travoloca agent wishes to create a database for its customer airline booking.
@@ -20,5 +21,5 @@ a minimum of four weeks before the departure date.
 Editors :
 1. Tussanakorn Rattanaburee
 2. Nattaporn Wiriyaprapanont
-
+3. Chanakarn Rungnisakarn
   
