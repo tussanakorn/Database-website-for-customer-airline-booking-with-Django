@@ -1,4 +1,4 @@
-# Flight databases with django
+# Flight databases with Django
 
 CPE231 Database Systems, October-November 2020
 
@@ -16,3 +16,9 @@ customer must accept or decline the booking.
 - The customer must pay the invoice in full by cash or by providing credit card information,
 a minimum of four weeks before the departure date.
 - The name and ID of the salesperson who initially processes the customer booking is recorded
+
+Editors :
+  1.Tussanakorn Rattanaburee
+  2.Nattaporn Wiriyaprapanont
+
+  
