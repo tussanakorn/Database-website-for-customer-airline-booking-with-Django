@@ -18,7 +18,7 @@ a minimum of four weeks before the departure date.
 - The name and ID of the salesperson who initially processes the customer booking is recorded
 
 Editors :
-  1.Tussanakorn Rattanaburee
-  2.Nattaporn Wiriyaprapanont
+1. Tussanakorn Rattanaburee
+2. Nattaporn Wiriyaprapanont
 
   
