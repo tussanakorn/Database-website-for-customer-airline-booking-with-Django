@@ -1,0 +1,40 @@
+{% extends "myapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="content">
+                <br>
+                <br>
+                <img src=https://ir.airasia.com/images/planezero.png hspace="230" 
+                    class="" style="height: 145px;">
+                <div class="p-1 m-2 md-c">
+                    <div class="col-lg-10 mt-4 border mb-4 mx-auto rounded pt-4 bg-white">
+                        <div class="col">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <fieldset class="form-group">
+                                    <legend class="border-bottom mb-4 text-center text-secondary" ><b class="text-danger" >Sign in </b>to Air Travel Agency</legend>
+                                    {{ form|crispy }}
+                                </fieldset>
+                                <div class="form-group">
+                                    <button class="btn btn-danger btn-block text-white" type="submit">Login</button>
+                                </div>
+                            </form>
+                            <div class="border-top pt-3 text-center">
+                                <small class="text-muted">
+                                    Need An Account? <a class="ml-2 text-center text-danger" href="{% url 'register' %}">Sign Up Now</a>
+                                </small>
+                            <br>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+ vffvd

@@ -1,0 +1,71 @@
+{% extends 'myapp/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>{{msg}}</h3>
+<br>
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+        <h2 class="text-danger">List of Flight</h2>
+        <table class="table table-striped" >
+            <thead>
+            <td class="bg-danger text-white">FLIGHT ID</td>
+            <td class="bg-danger text-white">FLIGHT NAME</td>
+            <td class="bg-danger text-white">FLIGHT NUMBER</td>    
+            <td class="bg-danger text-white">FROM</td>
+            <td class="bg-danger text-white">DEPARTURE DATE&TIME</td>
+            <td class="bg-danger text-white">TO</td>
+            <td class="bg-danger text-white">DESTINATION DATE&TIME</td>
+            <td class="bg-danger text-white">NUMBER OF SEATS</td>
+            <td class="bg-danger text-white">AVAILABLE</td>
+            <td class="bg-danger text-white">FARE</td>
+
+
+            </thead>
+
+            {% for row in bus_list %}
+            <tr>
+                <td>{{row.id }}</td>
+                <td>{{row.bus_name}}</td>
+                <td>{{row.flight_no}}</td>
+                <td>{{row.source}}</td>
+                <td>{{row.date}} {{row.time}}</td>
+                <td>{{row.dest}}</td>
+                <td>{{row.date1}} {{row.time1}}</td>
+                <td>{{row.nos}}</td>
+                <td>{{row.rem}}</td>
+                <td>{{row.price}}</td>
+
+
+            </tr>
+            {% endfor %}
+        </table>
+
+        </br>
+        </br>
+        <div class="content-section">
+                <form action="{% url 'bookings' %}" method="post">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4 text-danger">Flight Booking</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div>
+                        <input name='bus_id' class="form-control" type="number" id="example-email-input" placeholder="Enter ID of the Flight to Book">
+                    </div>
+                </br>
+                    <div>
+                        <input name='no_seats' class="form-control" type="number" placeholder="Enter No of Seats to Book Here">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button class="btn btn-danger btn-block text-white" type="submit">Book</button>
+                    </div>
+                    {{error}}
+                </form>
+            </div>
+    </div>
+</div>
+{% endblock %}

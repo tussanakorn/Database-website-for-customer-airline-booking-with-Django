@@ -1,0 +1,39 @@
+{% extends "myapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="content">
+                <br>
+                <br>
+                <br>
+                <img src=https://logos-download.com/wp-content/uploads/2016/05/AirAsia_logo_text.png hspace="320" 
+                    class="" style="height: 120px;">
+                <div class="p-1 m-2">
+                    <div class="col-lg-10 mt-4 border mb-4 mx-auto rounded pt-4 bg-white">
+                        <div class="col">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <fieldset class="form-group">
+                                    <legend class="border-bottom mb-4 text-center text-secondary" ><b class="text-danger" >Sign up </b>to Air Travel Agency</legend>
+                                    {{ form|crispy }}
+                                </fieldset>
+                                <div class="form-group">
+                                    <button class="btn btn-danger btn-block text-white" type="submit">Sign Up</button>
+                                </div>
+                            </form>
+                            <div class="border-top pt-3">
+                                <small class="text-muted">
+                                    Already Have An Account? <a class="ml-2 text-danger"  href="{% url 'login' %}">Sign In</a>
+                                </small>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

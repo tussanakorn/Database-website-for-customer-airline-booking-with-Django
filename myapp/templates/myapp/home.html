@@ -1,0 +1,123 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+
+<div class="container-fluid mt-5 p-0">
+	<div id="my-carousel" class="carousel slide" data-ride="carousel" data-interval="1000">
+		<ol class="carousel-indicators" >
+			<li class="active" data-target="#my-carousel" data-slide-to="0"></li>
+			<li class=""       data-target="#my-carousel" data-slide-to="1"></li>
+			<li class=""       data-target="#my-carousel" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="https://pbs.twimg.com/media/Eo8o7GeUYAEDW6s.jpg">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="https://pbs.twimg.com/media/EonJRZfXEAE8Fj4?format=jpg&name=4096x4096">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="https://pbs.twimg.com/media/EnLpW4iXYAIuCD4?format=jpg&name=4096x4096">
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#my-carousel" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a class="carousel-control-next" href="#my-carousel" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
+	</div>
+</div>
+<br>
+<br>
+<div id="booking" class="section">
+	<div class="section-center">
+		<div class="container">
+			<h1 class="text-center"><b class="text-center text-danger">Find </b>your flight</h1>
+			<div class="content-section ">
+				<br>
+				<div class="row justify-content-center">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="booking-form">
+							<form action="{% url 'findbus' %}" method="post">
+								{% csrf_token %}
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Flying from</span>
+											<input name='source' class="form-control" type="text" placeholder="City or airport">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Flyning to</span>
+											<input name='destination' class="form-control" type="text" placeholder="City or airport">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Departure Date</span>
+											<input name='date' class="form-control" type="date" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Adults (18+)</span>
+											<select class="form-control">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Children (0-17)</span>
+											<select class="form-control">
+												<option>0</option>
+												<option>1</option>
+												<option>2</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Travel class</span>
+											<select class="form-control">
+												<option>Economy class</option>
+												<option>Business class</option>
+												<option>First class</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									<button class="btn btn-danger btn-block text-white">Show flights</button>
+								</div>
+								<div class="form-btn">
+									<a class="text-danger" href="{% url 'seebookings' %}">View Bookings</a>
+								</div>
+								<h3 style="color: red;">{{error}}</h3>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div align="center" >
+	<br>
+	<img src="https://images.contentstack.io/v3/assets/blt81780e535e9d8b2b/blt49f2e25e1b051c4c/5f7dae0fed21e20f1440a4ad/HB-Global-Generic-MobileApp.jpg" 
+			class="" style="height: 300px;">
+			<br>
+			<br>
+</div>
+
+{% endblock content %}

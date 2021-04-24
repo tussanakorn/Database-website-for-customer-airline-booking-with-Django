@@ -1,0 +1,22 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<br>
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div align="center" >
+                <br>
+                <img src="https://64.media.tumblr.com/8ec26df0cac0332c06960db8cb635532/tumblr_inline_oivowz4T2r1sfo6p3_540.gifv" 
+                        class="" style="height: 400px;">
+                        <br>
+                        <br>
+            </div>
+            <h2 class="text-center">You have been logged out</h2>
+            <div class="border-top pt-3 text-center ">
+                <a class="ml-2 text-danger" href="{% url 'login' %}">Log In Again</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
