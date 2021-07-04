@@ -1,4 +1,4 @@
-#  ✈ Flight databases Website with Django  ✈
+#  ✈ Database website of flight information with Django ✈
 
 CPE231 Database Systems, October-November 2020
 - This project is made for educational purposes only. It is not intended to copy the website airasia in any way.
